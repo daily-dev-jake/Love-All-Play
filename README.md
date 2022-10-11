@@ -1,2 +1,4 @@
 # MERN-score-counter
-Simple score counter for badminton and table tennis
+## Love All Play
+Simple score counter for badminton
+
