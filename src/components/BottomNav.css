@@ -1,0 +1,45 @@
+@media screen and (min-aspect-ratio: 13/9) {
+    /* landscape styles here */
+}
+
+@media screen and (max-aspect-ratio: 13/9) {
+    /* portrait styles here */
+    .Btm-nav {
+        display: flex;
+        align-self: flex-end;
+        border-style: dotted;
+      
+      }
+      
+      .Btm-wrapper{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          height: 5rem;
+          border-style: dashed;
+      }
+      
+      .Home-nav {
+        border-style: dotted;
+        width: 25vmin;
+      }
+      
+      .Log-nav {
+        border-style: dotted;
+        width: 25vmin;
+      }
+      
+      .Settings-nav {
+        border-style: dotted;
+        width: 25vmin;
+      }
+      
+      .Profile-nav {
+        border-style: dotted;
+        width: 25vmin;
+      }
+      
+
+}  
+
+
