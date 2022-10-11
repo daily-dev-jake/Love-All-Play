@@ -13,19 +13,42 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-between;
     text-align: center;
-    border-style: dotted;
-    width: 80vw;
-    height: 99.5vh;
+    justify-content: space-between;
     margin: auto;
+    width: 90vw;
+    height: 99.5vh;
+    border-style: dotted;
   }
 
   .App-header {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
+    height: 7vh;
+  }
+
+  .playercourts-wrapper{
+    display: flex;
+    flex-direction: row;
+    height: 28vh;
     border-style: dotted;
+  }
+  .courts{
+    width: 50%;
+    border-style: dotted;
+
+  }
+
+  .flag{
+    height: auto;
+    border-style: dotted;
+
+  }
+  .gamescore-wrapper{
+    height: 15vh;
+    border-style: dotted;
+
   }
 }

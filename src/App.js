@@ -5,11 +5,21 @@ function App() {
   return (
     <div className='App'>
       <div className='App-wrapper'>
-      <header className='App-header'>
-        <p>Love All Play</p>
-      </header>
+        <header className='App-header'>
+          <p>Love All Play</p>
+        </header>
+        <div className='playercourts-wrapper'>
+          <div className='courts'>Courts</div>
+          <div className='courts'>Courts</div>
+        </div>
+        <div className="flag">Flag</div>
+        <div className='playercourts-wrapper'>
+          <div className='courts'>Courts</div>
+          <div className='courts'>Courts</div>
+        </div>
+        <div className='gamescore-wrapper'>Scores</div>
 
-      <BottomNav />
+        <BottomNav />
       </div>
     </div>
   );
