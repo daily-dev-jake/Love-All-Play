@@ -1,0 +1,18 @@
+@media screen and (min-aspect-ratio: 13/9) {
+  /* landscape styles here */
+}
+
+@media screen and (max-aspect-ratio: 13/9) {
+  /* portrait styles here */
+
+  .playercourts-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 28vh;
+    border-style: dotted;
+  }
+  .court {
+    width: 50%;
+    border-style: dotted;
+  }
+}

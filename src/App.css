@@ -29,17 +29,7 @@
     height: 7vh;
   }
 
-  .playercourts-wrapper{
-    display: flex;
-    flex-direction: row;
-    height: 28vh;
-    border-style: dotted;
-  }
-  .courts{
-    width: 50%;
-    border-style: dotted;
-
-  }
+  
 
   .flag{
     height: auto;

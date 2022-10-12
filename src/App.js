@@ -1,6 +1,6 @@
 import "./App.css";
 import BottomNav from "./components/BottomNav";
-
+import PlayerCourts from "./components/PlayerCourts";
 function App() {
   return (
     <div className='App'>
@@ -8,15 +8,9 @@ function App() {
         <header className='App-header'>
           <p>Love All Play</p>
         </header>
-        <div className='playercourts-wrapper'>
-          <div className='courts'>Courts</div>
-          <div className='courts'>Courts</div>
-        </div>
-        <div className="flag">Flag</div>
-        <div className='playercourts-wrapper'>
-          <div className='courts'>Courts</div>
-          <div className='courts'>Courts</div>
-        </div>
+        <PlayerCourts />
+        <div className='flag'>Flag</div>
+        <PlayerCourts />
         <div className='gamescore-wrapper'>Scores</div>
 
         <BottomNav />
