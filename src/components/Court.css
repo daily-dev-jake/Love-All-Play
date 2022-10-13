@@ -8,11 +8,14 @@
   .playercourts-wrapper {
     display: flex;
     flex-direction: row;
-    height: 28vh;
-    border-style: dotted;
   }
   .court {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
-    border-style: dotted;
+    height: 28vh;
+    font-size: 10vh;
+    border-style: solid;
   }
 }

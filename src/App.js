@@ -6,6 +6,8 @@ import RecordsPage from "./pages/RecordsPage";
 import SettingsPage from "./pages/SettingsPage";
 import UserPage from "./pages/UserPage";
 
+
+
 function App() {
   return (
     <div className='App'>

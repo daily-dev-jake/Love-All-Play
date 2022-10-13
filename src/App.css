@@ -18,29 +18,29 @@
     margin: auto;
     width: 90vw;
     height: 99.5vh; /* Change this height to account for iPhone bottom multitasking feature */
-    border-style: dotted;
+    /* border-style: dotted; */
   }
 
   .App-header {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
-    height: 7vh;
+    height: 5vh;
   }
 
   .net{
     display: flex;
     height: 5vh; /* Based on Net image */
     align-items: center;
-    border-style: dotted;
+    /* border-style: dotted; */
   }
   .net img{
     width: 100%;
   }
   .gamescore-wrapper{
     height: 15vh;
-    border-style: dotted;
+    /* border-style: dashed solid; */
 
   }
 }
