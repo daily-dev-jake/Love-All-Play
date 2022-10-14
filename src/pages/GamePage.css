@@ -1,6 +1,16 @@
 
 
-.gamescore-wrapper{
-    font-size: 2rem;
+.gameScore-wrapper p {
+    margin: 0;
+    font-size: 4rem;
     font-weight: bold;
+}
+
+.gameScores{
+    display: flex;
+    align-items: center;
+}
+.courtScore{
+    width: 45%;
+    font-size: 5rem;
 }

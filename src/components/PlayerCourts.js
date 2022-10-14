@@ -1,14 +1,14 @@
 import React from "react";
 import "./Court.css";
 
-const PlayerCourts = ({ playerScores }, { handleClickCourt }) => {
+const PlayerCourts = ({ playerScores, handleClickCourt }) => {
   return (
-    <div className='playercourts-wrapper'>
+    <div className='playercourts-wrapper' onClick={handleClickCourt}>
       <div className='court'>
-        <button onClick={handleClickCourt}>{playerScores.toString()}</button>
+        <div>{playerScores}</div>
       </div>
       <div className='court'>
-        <button onClick={handleClickCourt}>{playerScores.toString()}</button>
+        <div>{playerScores}</div>
       </div>
     </div>
   );
