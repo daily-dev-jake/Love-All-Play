@@ -26,6 +26,9 @@ const GamePage = () => {
       //initial states
       setTopCourtScore(debugScores.player1);
       setBtmCourtScore(debugScores.player2);
+      playerScores.player1 = debugScores.player1;
+      playerScores.player2 = debugScores.player1;
+      console.log("Init: topCourtScore = " + topCourtScore + " btmCourtScore = " + btmCourtScore);
     }
   }, []);
 
@@ -49,8 +52,6 @@ const GamePage = () => {
       setBtmCourtScore(debugScores.player1);
       playerScores.player1 = debugScores.player1;
       playerScores.player2 = debugScores.player1;
-      console.log(playerScores.player1);
-      console.log(playerScores.player2);
     } else {
       setTopCourtScore(0);
       setBtmCourtScore(0);
@@ -63,12 +64,12 @@ const GamePage = () => {
     if (
       (topCourtScore === 21 && btmCourtScore < 20) ||
       (topCourtScore >= 21 &&
-        btmCourtScore >= 21 &&
-        (topCourtScore - btmCourtScore) >= 2) ||
+       btmCourtScore >= 21 &&
+      (topCourtScore - btmCourtScore) >= 2) ||
       (topCourtScore === 29)
     ) {
       // Winner court is top court
-      console.log("Top Won with score of " + topCourtScore + "");
+      console.log("Top Won with score of " + topCourtScore + " : " + btmCourtScore);
 
       resetMatch();
     }
@@ -78,12 +79,12 @@ const GamePage = () => {
     if (
       (btmCourtScore === 21 && topCourtScore < 20) ||
       (btmCourtScore >= 21 &&
-        topCourtScore >= 21 &&
-        (btmCourtScore - topCourtScore) >= 2) ||
+       topCourtScore >= 21 &&
+      (btmCourtScore - topCourtScore) >= 2) ||
       (btmCourtScore === 29)
     ) {
       // Winner court is btm court
-      console.log("Btm Won with score of " + btmCourtScore + "");
+      console.log("Btm Won with score of " + btmCourtScore + " : " + topCourtScore);
       resetMatch();
     }
   };
@@ -92,8 +93,8 @@ const GamePage = () => {
     if (
       (topCourtScore === 20 && btmCourtScore <= 19) ||
       (btmCourtScore >= 20 &&
-        topCourtScore >= 20 &&
-        (topCourtScore - btmCourtScore) >= 1)
+       topCourtScore >= 20 &&
+      (topCourtScore - btmCourtScore) >= 1)
     ) {
       makeCourtGreen("top");
       return true;
@@ -101,8 +102,8 @@ const GamePage = () => {
     if (
       (btmCourtScore === 20 && topCourtScore <= 19) ||
       (btmCourtScore >= 20 &&
-        topCourtScore >= 20 &&
-        (btmCourtScore - topCourtScore) >= 1)
+       topCourtScore >= 20 &&
+      (btmCourtScore - topCourtScore) >= 1)
     ) {
       //Make Court green
       makeCourtGreen("btm");
@@ -111,14 +112,14 @@ const GamePage = () => {
     return false;
   };
   const handleClickTopCourt = () => {
-    setTopCourtScore(topCourtScore + 1);
+    setTopCourtScore((prevState) => prevState + 1);
     playerScores.player1++;
     console.log("top score = " + playerScores.player1);
     checkMatchPoint(playerScores.player1, playerScores.player2);
     checkTopWon(playerScores.player1, playerScores.player2);
   };
   const handleClickBtmCourt = () => {
-    setBtmCourtScore(btmCourtScore + 1);
+    setBtmCourtScore((prevState) => prevState + 1);
     playerScores.player2++;
     console.log("btm score = " + playerScores.player2);
     checkMatchPoint(playerScores.player1, playerScores.player2);
