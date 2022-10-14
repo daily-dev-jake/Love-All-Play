@@ -3,6 +3,14 @@ import PlayerCourts from "../components/PlayerCourts";
 import { MdOutlineSwapVert } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import "./GamePage.css";
+
+const DEBUG = true;
+
+const debugScores = {
+  player1: 19,
+  player2: 19,
+};
+
 const playerScores = {
   player1: 0,
   player2: 0,
@@ -10,8 +18,16 @@ const playerScores = {
 
 const GamePage = () => {
   //initialise state
-  const [topCourtScore, setTopCourtScore] = useState(0);
-  const [btmCourtScore, setBtmCourtScore] = useState(0);
+  const [topCourtScore, setTopCourtScore] = useState(playerScores.player1);
+  const [btmCourtScore, setBtmCourtScore] = useState(playerScores.player2);
+
+  useEffect(() => {
+    if (DEBUG) {
+      //initial states
+      setTopCourtScore(debugScores.player1);
+      setBtmCourtScore(debugScores.player2);
+    }
+  }, []);
 
   //#region Court position
   //  -------------
@@ -24,29 +40,70 @@ const GamePage = () => {
   //#endregion
 
   const makeCourtGreen = (courtPosition) => {
-    if (courtPosition === "top") {
-    }
-    if (courtPosition === "btm") {
+    console.log(courtPosition + " Match Point");
+  };
+
+  const resetMatch = () => {
+    if (DEBUG) {
+      setTopCourtScore(debugScores.player1);
+      setBtmCourtScore(debugScores.player1);
+      playerScores.player1 = debugScores.player1;
+      playerScores.player2 = debugScores.player1;
+      console.log(playerScores.player1);
+      console.log(playerScores.player2);
+    } else {
+      setTopCourtScore(0);
+      setBtmCourtScore(0);
+      playerScores.player1 = 0;
+      playerScores.player2 = 0;
     }
   };
 
-  const isWon = () => {
+  const checkTopWon = (topCourtScore, btmCourtScore) => {
     if (
       (topCourtScore === 21 && btmCourtScore < 20) ||
-      (btmCourtScore === 21 && topCourtScore < 20)
+      (topCourtScore >= 21 &&
+        btmCourtScore >= 21 &&
+        (topCourtScore - btmCourtScore) >= 2) ||
+      (topCourtScore === 29)
     ) {
       // Winner court is top court
-      console.log("Won");
-      return true;
+      console.log("Top Won with score of " + topCourtScore + "");
+
+      resetMatch();
     }
-    return false;
   };
 
-  const isMatchPoint = (topCourtScore, btmCourtScore) => {
-    if (topCourtScore === 20 && btmCourtScore < 20) {
+  const checkBtmWon = (topCourtScore, btmCourtScore) => {
+    if (
+      (btmCourtScore === 21 && topCourtScore < 20) ||
+      (btmCourtScore >= 21 &&
+        topCourtScore >= 21 &&
+        (btmCourtScore - topCourtScore) >= 2) ||
+      (btmCourtScore === 29)
+    ) {
+      // Winner court is btm court
+      console.log("Btm Won with score of " + btmCourtScore + "");
+      resetMatch();
+    }
+  };
+
+  const checkMatchPoint = (topCourtScore, btmCourtScore) => {
+    if (
+      (topCourtScore === 20 && btmCourtScore <= 19) ||
+      (btmCourtScore >= 20 &&
+        topCourtScore >= 20 &&
+        (topCourtScore - btmCourtScore) >= 1)
+    ) {
+      makeCourtGreen("top");
       return true;
     }
-    if (btmCourtScore === 20 && topCourtScore < 20) {
+    if (
+      (btmCourtScore === 20 && topCourtScore <= 19) ||
+      (btmCourtScore >= 20 &&
+        topCourtScore >= 20 &&
+        (btmCourtScore - topCourtScore) >= 1)
+    ) {
       //Make Court green
       makeCourtGreen("btm");
       return true;
@@ -56,28 +113,21 @@ const GamePage = () => {
   const handleClickTopCourt = () => {
     setTopCourtScore(topCourtScore + 1);
     playerScores.player1++;
-    if (isMatchPoint) {
-      //Make Court green
-      makeCourtGreen("top");
-    }
+    console.log("top score = " + playerScores.player1);
+    checkMatchPoint(playerScores.player1, playerScores.player2);
+    checkTopWon(playerScores.player1, playerScores.player2);
   };
   const handleClickBtmCourt = () => {
     setBtmCourtScore(btmCourtScore + 1);
     playerScores.player2++;
-    if (isMatchPoint) {
-      //Make Court green
-      makeCourtGreen("top");
-    }
+    console.log("btm score = " + playerScores.player2);
+    checkMatchPoint(playerScores.player1, playerScores.player2);
+    checkBtmWon(playerScores.player1, playerScores.player2);
   };
-  const handleClickSwapCourt = () => {
-
-  }
-  // useEffect(() => {
-  //   //initial states
-  //   setPlayer1Scores(playerScores.player1);
-  //   setPlayer2Scores(playerScores.player2);
-  //   setPlayer1Position("R");
-  // }, []);
+  const handleClickSwapCourt = () => {};
+  const handleResetMatch = () => {
+    resetMatch();
+  };
 
   return (
     <div className='gamePage'>
@@ -96,7 +146,7 @@ const GamePage = () => {
       <div className='gameScore-wrapper'>
         <p>Scores</p>
         <div className='gameScores'>
-          <GrPowerReset fontSize={50}/>
+          <GrPowerReset fontSize={50} onClick={handleResetMatch} />
 
           <div className='courtScore'>{topCourtScore}</div>
           <p>:</p>
