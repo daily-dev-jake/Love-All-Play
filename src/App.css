@@ -22,11 +22,13 @@
   }
 
   .App-header {
-    font-size: 3rem;
+    /* have to check if phone is low res then,
+     need to decrease to 2rem*/
+    font-size: 5rem;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
-    height: 5vh;
+    height: 10vh;
   }
 
   .net{

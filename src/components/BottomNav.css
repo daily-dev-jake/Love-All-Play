@@ -11,32 +11,16 @@
     margin-bottom: 0.2vh;
     /* border-style: dotted; */
   }
-/* 
-  .Btm-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 5rem;
-    border-style: dashed;
-  } */
-
-  .Home-nav {
-    /* border-style: dotted; */
+  .inactive{
     width: 22vmin;
+    color: #000000;
+  }
+  .active {
+    /* border-style: dotted; */
+    width: 23vmin;
+    color: #95bcf0;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid #95bcf0;
   }
 
-  .Log-nav {
-    /* border-style: dotted; */
-    width: 22vmin;
-  }
-
-  .Settings-nav {
-    /* border-style: dotted; */
-    width: 22vmin;
-  }
-
-  .Profile-nav {
-    /* border-style: dotted; */
-    width: 22vmin;
-  }
 }
