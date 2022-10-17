@@ -15,7 +15,7 @@ const BottomNav = () => {
   return (
     <nav className='Btm-nav'>
       <NavLink
-        to='/'
+        to='/gamepage'
         exact
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>

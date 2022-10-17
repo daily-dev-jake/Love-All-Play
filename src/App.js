@@ -16,11 +16,11 @@ function App() {
           <p>Love All Play</p>
         </header>
         <Routes>
-          <Route path='/' exact element={<GamePage />} />
+          <Route path='/gamepage' exact element={<GamePage />} />
           <Route path='/records' exact element={<RecordsPage />} />
           <Route path='/settings' exact element={<SettingsPage />} />
           <Route path='/user' exact element={<UserPage />} />
-          <Route path='*' element={<Navigate to='/' replace />} />
+          <Route path='*' element={<Navigate to='/gamepage' replace />} />
         </Routes>
         <BottomNav />
       </div>
