@@ -25,6 +25,9 @@
     /* have to check if phone is low res then,
      need to decrease to 2rem*/
     font-size: 5rem;
+    background: linear-gradient(to right, rgb(67,124,205),rgb(69,214,202));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
