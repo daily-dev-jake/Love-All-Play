@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
     width: 50%;
     height: 28vh;
     font-size: 10vh;
