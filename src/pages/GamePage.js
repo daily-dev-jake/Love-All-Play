@@ -63,8 +63,8 @@ const GamePage = () => {
   const checkTopWon = (topCourtScore, btmCourtScore) => {
     if (
       (topCourtScore === 21 && btmCourtScore < 20) ||
-      (topCourtScore >= 21 &&
-       btmCourtScore >= 21 &&
+      (topCourtScore >= 20 &&
+       btmCourtScore >= 20 &&
       (topCourtScore - btmCourtScore) >= 2) ||
       (topCourtScore === 29)
     ) {
@@ -78,8 +78,8 @@ const GamePage = () => {
   const checkBtmWon = (topCourtScore, btmCourtScore) => {
     if (
       (btmCourtScore === 21 && topCourtScore < 20) ||
-      (btmCourtScore >= 21 &&
-       topCourtScore >= 21 &&
+      (btmCourtScore >= 20 &&
+       topCourtScore >= 20 &&
       (btmCourtScore - topCourtScore) >= 2) ||
       (btmCourtScore === 29)
     ) {
