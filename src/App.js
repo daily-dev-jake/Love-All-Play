@@ -1,26 +1,28 @@
 import "./App.css";
-import { Navigate, Routes, Route } from "react-router-dom";
+import { Link, Navigate, Routes, Route } from "react-router-dom";
 import BottomNav from "./components/BottomNav";
 import GamePage from "./pages/GamePage";
 import RecordsPage from "./pages/RecordsPage";
 import SettingsPage from "./pages/SettingsPage";
 import UserPage from "./pages/UserPage";
-
-
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <div className='App'>
       <div className='App-wrapper'>
         <header className='App-header'>
-          <p>Love All Play</p>
+          <Link to={"/landing"}>
+            <p>Love All Play</p>
+          </Link>
         </header>
         <Routes>
-          <Route path='/gamepage' exact element={<GamePage />} />
-          <Route path='/records' exact element={<RecordsPage />} />
-          <Route path='/settings' exact element={<SettingsPage />} />
-          <Route path='/user' exact element={<UserPage />} />
-          <Route path='*' element={<Navigate to='/gamepage' replace />} />
+          <Route path='/landing' element={<LandingPage />} />
+          <Route path='/app/gamepage' element={<GamePage />} />
+          <Route path='/app/records' element={<RecordsPage />} />
+          <Route path='/app/settings' element={<SettingsPage />} />
+          <Route path='/app/user' element={<UserPage />} />
+          <Route path='*' element={<Navigate to='/landing' replace />} />
         </Routes>
         <BottomNav />
       </div>

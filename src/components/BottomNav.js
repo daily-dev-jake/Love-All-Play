@@ -15,15 +15,14 @@ const BottomNav = () => {
   return (
     <nav className='Btm-nav'>
       <NavLink
-        to='/gamepage'
-        exact
+        to='/app/gamepage'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? <HiHome fontSize={65} /> : <HiOutlineHome fontSize={52} />
         }
       </NavLink>
       <NavLink
-        to='/records'
+        to='/app/records'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
@@ -34,7 +33,7 @@ const BottomNav = () => {
         }
       </NavLink>
       <NavLink
-        to='/settings'
+        to='/app/settings'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
@@ -45,7 +44,7 @@ const BottomNav = () => {
         }
       </NavLink>
       <NavLink
-        to='/user'
+        to='/app/user'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
