@@ -1,6 +1,7 @@
 # Love All Play
 
 Description: Simple score counter for badminton
+Deployed to: https://love-all-play.onrender.com
 
 ## Minimum Features
 ### Guest features

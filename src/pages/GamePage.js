@@ -7,8 +7,8 @@ import "./GamePage.css";
 const DEBUG = true;
 
 const debugScores = {
-  player1: 19,
-  player2: 19,
+  player1: 0,
+  player2: 0,
 };
 
 const playerScores = {
