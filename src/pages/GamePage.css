@@ -1,16 +1,46 @@
 
 
+.score-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%; 
+}
+.gameScore-wrapper {
+    margin: 5px;
+    font-size: 4rem; 
+    width: 85%; 
+    font-weight: bold;
+}
 .gameScore-wrapper p {
-    margin: 0;
+    margin:0;
     font-size: 4rem;
     font-weight: bold;
 }
-
 .gameScores{
     display: flex;
     align-items: center;
 }
 .courtScore{
-    width: 45%;
+    width: 50%;
     font-size: 5rem;
+}
+.courtMatchScore{
+    width: 50%;
+    align-self: center;
+    font-size: 2rem;
+}
+.gameMatch-wrapper{
+    display: flex;
+    width: 15%; 
+    flex-direction: column;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.gameMatch{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }

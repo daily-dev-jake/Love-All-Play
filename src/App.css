@@ -21,32 +21,72 @@
     background-color: transparent;
     /* border-style: dotted; */
   }
-
-  .App-header {
-    /* have to check if phone is low res then,
+  @media screen and (min-width: 800px) {
+    .App-header {
+      /* have to check if phone is low res then,
      need to decrease to 2rem*/
-    font-size: 5rem;
-    background: linear-gradient(to right, rgb(67,124,205),rgb(69,214,202));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    height: 10vh;
+      font-size: 5rem;
+      background: linear-gradient(
+        to right,
+        rgb(67, 124, 205),
+        rgb(69, 214, 202)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      margin-left: auto;
+      margin-right: auto;
+      height: 10vh;
+    }
+  }
+  @media screen and (min-width: 400px) {
+    .App-header {
+      /* have to check if phone is low res then,
+     need to decrease to 2rem*/
+      font-size: 2rem;
+      background: linear-gradient(
+        to right,
+        rgb(67, 124, 205),
+        rgb(69, 214, 202)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      margin-left: auto;
+      margin-right: auto;
+      height: 10vh;
+    }
+  }
+  @media screen and (max-device-width: 400px) {
+    .App-header {
+      /* have to check if phone is low res then,
+     need to decrease to 2rem*/
+      font-size: 2rem;
+      background: linear-gradient(
+        to right,
+        rgb(67, 124, 205),
+        rgb(69, 214, 202)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      margin-left: auto;
+      margin-right: auto;
+      height: 10vh;
+    }
   }
 
-  .net{
+  .net {
     display: flex;
     height: 5vh; /* Based on Net image */
     align-items: center;
     /* border-style: dotted; */
   }
-  .net img{
+  .net img {
     width: 100%;
   }
-  .gamescore-wrapper{
+  .gamescore-wrapper {
     height: 15vh;
     /* border-style: dashed solid; */
-
   }
 }
