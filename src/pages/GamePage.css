@@ -21,6 +21,11 @@
     display: flex;
     align-items: center;
 }
+.names{
+    margin:0;
+    font-size: 1rem;
+    font-weight: bold;
+}
 .courtScore{
     width: 50%;
     font-size: 5rem;

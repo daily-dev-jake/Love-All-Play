@@ -6,10 +6,23 @@ import "./GamePage.css";
 
 const DEBUG = true;
 
+class Player {
+  constructor(playerName, playerScore) {
+    this.playerName = playerName;
+    this.playerScore = playerScore;
+  }
+}
+// TODO: Make 2 or 4 players (If 4 players = need to make 2 teams)
+const playerCount = {
+  Two: 2,
+  Four: 4,
+};
+
 const debugScores = {
   player1: 19,
   player2: 19,
 };
+
 // const debugMatchScores = {
 //   player1: 0,
 //   player2: 0,
@@ -25,31 +38,50 @@ const playerMatchScores = {
   player2: 0,
 };
 
-const GamePage = () => {
+const GamePage = ({ player1Name, player2Name }) => {
   //initialise state
   const [topCourtScore, setTopCourtScore] = useState(playerScores.player1);
   const [btmCourtScore, setBtmCourtScore] = useState(playerScores.player2);
-
+  const Player1 = new Player(player1Name, playerScores.player1);
+  const Player2 = new Player(player2Name, playerScores.player2);
   const [player1MatchScore, setplayer1MatchScore] = useState(
     playerMatchScores.player1
   );
   const [player2MatchScore, setplayer2MatchScore] = useState(
     playerMatchScores.player2
   );
+  
   useEffect(() => {
+    Player1.playerName = player1Name;
+    Player2.playerName = player2Name;
+    console.log(
+      "Init: topCourtScore = " +
+        topCourtScore + " with player 1: " + player1Name +
+        " btmCourtScore = " +
+        btmCourtScore + " with player 2: " + player2Name
+    );
+    }, [player1Name, player2Name]);
+  useEffect(() => {
+    Player1.playerName = player1Name;
+    Player2.playerName = player2Name;
     if (DEBUG) {
       //initial states
       setTopCourtScore(debugScores.player1);
       setBtmCourtScore(debugScores.player2);
       playerScores.player1 = debugScores.player1;
       playerScores.player2 = debugScores.player1;
-      console.log(
-        "Init: topCourtScore = " +
-          topCourtScore +
-          " btmCourtScore = " +
-          btmCourtScore
-      );
+      // console.log(
+      //   "Init: topCourtScore = " +
+      //     topCourtScore + " with player 1: " + player1Name +
+      //     " btmCourtScore = " +
+      //     btmCourtScore + " with player 2: " + player2Name
+      // );
     }
+    // else {
+
+    //   const player1 = new Player(player1Name, 0);
+    //   const player2 = new Player(player2Name, 0);
+    // }
   }, []);
 
   //#region Court position
@@ -107,7 +139,7 @@ const GamePage = () => {
       );
       setplayer1MatchScore((prevState) => prevState + 1);
       playerMatchScores.player1++;
-      console.log("Match point to player" + " " + playerMatchScores.player1);
+      console.log("Match point to player", " ", playerMatchScores.player1.toString());
       resetGame();
     }
   };
@@ -196,10 +228,15 @@ const GamePage = () => {
           <p>Scores</p>
           <div className='gameScores'>
             <GrPowerReset fontSize={50} onClick={handleResetGame} />
-
-            <div className='courtScore'>{topCourtScore}</div>
+            <div>
+              <label className="names">{Player1.playerName}</label>
+              <div className='courtScore'>{topCourtScore}</div>
+            </div>
             <p>:</p>
-            <div className='courtScore'>{btmCourtScore}</div>
+            <div>
+              <label className="names">{Player2.playerName}</label>
+              <div className='courtScore'>{btmCourtScore}</div>
+            </div>
           </div>
         </div>
         <div className='gameMatch-wrapper'>
