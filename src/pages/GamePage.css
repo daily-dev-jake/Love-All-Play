@@ -1,51 +1,96 @@
-
-
-.score-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%; 
+.score-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
 }
 .gameScore-wrapper {
-    margin: 5px;
-    font-size: 4rem; 
-    width: 85%; 
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: 5px;
+  font-size: 4rem;
+  width: 65%;
+  font-weight: bold;
 }
 .gameScore-wrapper p {
-    margin:0;
-    font-size: 4rem;
-    font-weight: bold;
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
 }
-.gameScores{
-    display: flex;
-    align-items: center;
+.gameScores {
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
-.names{
-    margin:0;
-    font-size: 1rem;
-    font-weight: bold;
+.names {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
-.courtScore{
-    width: 50%;
-    font-size: 5rem;
+.courtScore {
+  width: 50%;
+  font-size: 5rem;
 }
-.courtMatchScore{
-    width: 50%;
-    align-self: center;
-    font-size: 2rem;
+.courtMatchScore {
+  width: 50%;
+  align-self: center;
+  font-size: 2rem;
 }
-.gameMatch-wrapper{
-    display: flex;
-    width: 15%; 
-    flex-direction: column;
-    margin: 0;
-    font-size: 1rem;
-    font-weight: bold;
+.gameMatch-wrapper {
+  display: flex;
+  border-style: dashed;
+  width: 35%;
+  flex-direction: column;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.gameMatch{
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+.gameMatch {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+@media screen and (min-aspect-ratio: 13/9) {
+  /* landscape styles here */
+  .gameScore-wrapper p {
+    /* have to check if phone is low res then,
+   need to decrease to 2rem */
+    font-size: 3rem;
+  }
+  
+.courtScore {
+  width: 50%;
+  font-size: 3rem;
+}
+}
+
+@media screen and (max-aspect-ratio: 13/9) {
+  @media screen and (min-width: 400px) {
+ .gameScore-wrapper p {
+      /* have to check if phone is low res then,
+     need to decrease to 2rem */
+      font-size: 2rem;
+    }
+    
+.courtScore {
+    width: 50%;
+    font-size: 2rem;
+  }
+
+  }
+  @media screen and (max-device-width: 400px) {
+    gameScore-wrapper {
+      /* have to check if phone is low res then,
+     need to decrease to 2rem*/
+      font-size: 2rem;
+    }
+    .courtScore {
+        width: 50%;
+        font-size: 2rem;
+      }
+  }
 }

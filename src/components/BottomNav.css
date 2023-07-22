@@ -1,3 +1,23 @@
+.Btm-nav {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin-bottom: 0.2vh;
+  /* pointer-events: none; */
+  /* border-style: dotted; */
+}
+.inactive{
+  width: 22vmin;
+  color: #000000;
+}
+.active {
+  /* border-style: dotted; */
+  width: 23vmin;
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid #95bcf0;
+}
+
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
 }
@@ -5,23 +25,10 @@
 @media screen and (max-aspect-ratio: 13/9) {
   /* portrait styles here */
   .Btm-nav {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
+    min-height: 85px;
     margin-bottom: 0.2vh;
     /* pointer-events: none; */
     /* border-style: dotted; */
-  }
-  .inactive{
-    width: 22vmin;
-    color: #000000;
-  }
-  .active {
-    /* border-style: dotted; */
-    width: 23vmin;
-    color: #95bcf0;
-    padding-bottom: 0.25rem;
-    border-bottom: 4px solid #95bcf0;
   }
 
 }

@@ -1,60 +1,83 @@
+.App-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 90vw;
+  height: 99.5vh; /* Change this height to account for iPhone bottom multitasking feature */
+  /* border-style: dotted; */
+}
+
+.App-header {
+  /* have to check if phone is low res then,
+ need to decrease to 2rem*/
+  font-size: 3rem;
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  -webkit-background-clip: text;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 5vh;
+}
+.App-header p {
+  margin: 0;
+}
+.net {
+  display: flex;
+  height: 5vh; /* Based on Net image */
+  align-items: center;
+  /* border-style: dotted; */
+}
+.net img {
+  width: 100%;
+}
+.gamescore-wrapper {
+  height: 15vh;
+  /* border-style: dashed solid; */
+}
+
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
+
+  .App-header {
+    /* have to check if phone is low res then,
+ need to decrease to 2rem*/
+    font-size: 4rem;
+    background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+    -webkit-background-clip: text;
+  margin-top: 2rem;
+  font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10vh;
+  }
 }
 
 @media screen and (max-aspect-ratio: 13/9) {
   /* portrait styles here */
-
-  .App {
-    /* display: flex; */
+  .App-header {
+    /* have to check if phone is low res then,
+   need to decrease to 2rem*/
+    font-size: 3rem;
+    background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+    -webkit-background-clip: text;
+  margin-top: 2rem;
+  font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    height: 10vh;
   }
-
-  .App-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    justify-content: space-between;
-    margin: auto;
-    width: 90vw;
-    height: 99.5vh; /* Change this height to account for iPhone bottom multitasking feature */
-    background-color: transparent;
-    /* border-style: dotted; */
-  }
-  @media screen and (min-width: 800px) {
-    .App-header {
-      /* have to check if phone is low res then,
-     need to decrease to 2rem*/
-      font-size: 5rem;
-      background: linear-gradient(
-        to right,
-        rgb(67, 124, 205),
-        rgb(69, 214, 202)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      margin-left: auto;
-      margin-right: auto;
-      height: 10vh;
-    }
-  }
+  /* @media screen and (min-width: 800px) {
+    
+  } */
   @media screen and (min-width: 400px) {
-    .App-header {
+    */ .App-header {
       /* have to check if phone is low res then,
-     need to decrease to 2rem*/
+     need to decrease to 2rem */
       font-size: 2rem;
-      background: linear-gradient(
-        to right,
-        rgb(67, 124, 205),
-        rgb(69, 214, 202)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      margin-left: auto;
-      margin-right: auto;
-      height: 10vh;
     }
   }
   @media screen and (max-device-width: 400px) {
@@ -62,31 +85,6 @@
       /* have to check if phone is low res then,
      need to decrease to 2rem*/
       font-size: 2rem;
-      background: linear-gradient(
-        to right,
-        rgb(67, 124, 205),
-        rgb(69, 214, 202)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      margin-left: auto;
-      margin-right: auto;
-      height: 10vh;
     }
-  }
-
-  .net {
-    display: flex;
-    height: 5vh; /* Based on Net image */
-    align-items: center;
-    /* border-style: dotted; */
-  }
-  .net img {
-    width: 100%;
-  }
-  .gamescore-wrapper {
-    height: 15vh;
-    /* border-style: dashed solid; */
   }
 }

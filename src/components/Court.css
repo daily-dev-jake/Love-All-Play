@@ -1,3 +1,19 @@
+
+.playercourts-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.court {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 50%;
+  height: 28vh;
+  font-size: 10vh;
+  border-style: solid;
+}
+
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
 }
@@ -5,18 +21,4 @@
 @media screen and (max-aspect-ratio: 13/9) {
   /* portrait styles here */
 
-  .playercourts-wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  .court {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    width: 50%;
-    height: 28vh;
-    font-size: 10vh;
-    border-style: solid;
-  }
 }
