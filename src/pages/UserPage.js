@@ -13,10 +13,16 @@ const UserPage = ({handleNameChange, player1Name, player2Name}) => {
   };
   const handlePlayerNameUpdate = (e) => {
     // TODO: Save it
+    
     e.preventDefault();
     console.log(nameofPlayer1," ",nameofPlayer2);
+    savePlayerName(nameofPlayer1,nameofPlayer2);
     handleNameChange(1, nameofPlayer1);
     handleNameChange(2, nameofPlayer2);
+  };
+  const savePlayerName = (playerName1,playerName2) => {
+    sessionStorage.setItem('playerName1', playerName1);
+    sessionStorage.setItem('playerName2', playerName2);
   };
   return (
     <div>

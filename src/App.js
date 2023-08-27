@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Navigate, Routes, Route } from "react-router-dom";
 import BottomNav from "./components/BottomNav";
 import GamePage from "./pages/GamePage";
@@ -11,6 +11,16 @@ import LandingPage from "./pages/LandingPage";
 function App() {
   const [player1Name, setPlayer1Name] = useState("");
   const [player2Name, setPlayer2Name] = useState("");
+
+  useEffect(() =>{
+    const p1name = sessionStorage.getItem("playerName1");
+    const p2name = sessionStorage.getItem("playerName2");
+    if(p1name !== "" && p2name !== "" ){
+      handleNameChange(1,p1name);
+      handleNameChange(2,p2name);
+    }
+  },[player1Name,player2Name])
+
   const handleNameChange = (playerNum, name) => {
     if (playerNum === 1) {
       setPlayer1Name(name);
