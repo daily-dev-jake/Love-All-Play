@@ -74,7 +74,7 @@
     
   } */
   @media screen and (min-width: 400px) {
-    */ .App-header {
+   .App-header {
       /* have to check if phone is low res then,
      need to decrease to 2rem */
       font-size: 2rem;
