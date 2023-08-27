@@ -4,7 +4,7 @@ import { MdOutlineSwapVert } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import "./GamePage.css";
 
-const DEBUG = true;
+const DEBUG = false;
 
 class Player {
   constructor(playerName, playerScore) {
