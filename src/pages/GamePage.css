@@ -7,7 +7,6 @@
 .gameScore-wrapper {
   display: flex;
   flex-direction: column;
-  align-content: center;
   align-items: center;
   margin: 5px;
   font-size: 4rem;
@@ -21,8 +20,14 @@
 }
 .gameScores {
   display: flex;
-  align-content: center;
+  align-content: space-evenly;
+  padding:10px;
   align-items: center;
+}
+
+.gameScores .score{
+  display: flex;
+  flex-direction: column;
 }
 .names {
   margin: 0;

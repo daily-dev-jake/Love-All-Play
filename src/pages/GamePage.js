@@ -228,12 +228,12 @@ const GamePage = ({ player1Name, player2Name }) => {
           <p>Scores</p>
           <div className='gameScores'>
             <GrPowerReset fontSize={50} onClick={handleResetGame} />
-            <div>
+            <div className='score'>
               <label className="names">{Player1.playerName}</label>
               <div className='courtScore'>{topCourtScore}</div>
             </div>
             <p>:</p>
-            <div>
+            <div className='score'>
               <label className="names">{Player2.playerName}</label>
               <div className='courtScore'>{btmCourtScore}</div>
             </div>
