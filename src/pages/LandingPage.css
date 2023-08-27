@@ -5,10 +5,10 @@
 }
 
 .anim-wrapper{
-    display: grid;
-    place-items: center;
-    align-content: center;
-    min-height: 105vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
 }
 
 .title{
@@ -30,7 +30,6 @@
   cursor: pointer;
   display: inline-flex;
   font-size: 2rem;
-  /* font-family: "JetBrains Mono",monospace; */
   height: 48px;
   justify-content: center;
   line-height: 1;

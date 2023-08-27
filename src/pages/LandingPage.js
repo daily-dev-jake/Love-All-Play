@@ -16,7 +16,7 @@ const LandingPage = () => {
         title={"New user?"}
         bText={"Sign in here"}
         subtitle={"Otherwise,"}
-        pText={"Continue as Guest\n or click on the "}
+        pText={"Continue as Guest or click on the "}
         icon={<HiOutlineHome />}
         textAfterIcon={" icon."}
       />

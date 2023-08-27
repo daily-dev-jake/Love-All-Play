@@ -29,7 +29,7 @@ const UserPage = ({handleNameChange, player1Name, player2Name}) => {
       <div className='guest-view'>
       <div className="guest-header">
         <h1>Hi Guest</h1>
-        <a href="#">Login or Sign up here</a>
+        <a href="./">Login or Sign up here</a>
       </div>
         <form onSubmit={handlePlayerNameUpdate}>
           <div className='form-group'>
