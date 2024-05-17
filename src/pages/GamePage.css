@@ -59,6 +59,16 @@
   align-items: stretch;
 }
 
+.net-region{
+  display: grid;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-template-columns: 2rem auto;
+  justify-items: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
   .gameScore-wrapper p {

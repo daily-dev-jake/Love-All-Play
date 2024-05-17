@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useMemo } from "react";
 import PlayerCourts from "../components/PlayerCourts";
 import { MdOutlineSwapVert } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
@@ -42,25 +42,27 @@ const GamePage = ({ player1Name, player2Name }) => {
   //initialise state
   const [topCourtScore, setTopCourtScore] = useState(playerScores.player1);
   const [btmCourtScore, setBtmCourtScore] = useState(playerScores.player2);
-  const Player1 = new Player(player1Name, playerScores.player1);
-  const Player2 = new Player(player2Name, playerScores.player2);
+
+  
+  const Player1 = useMemo(() => new Player(player1Name, playerScores.player1), [player1Name]);
+  const Player2 = useMemo(() => new Player(player2Name, playerScores.player2), [player2Name]);
   const [player1MatchScore, setplayer1MatchScore] = useState(
     playerMatchScores.player1
   );
   const [player2MatchScore, setplayer2MatchScore] = useState(
     playerMatchScores.player2
   );
-  
+
   useEffect(() => {
     Player1.playerName = player1Name;
     Player2.playerName = player2Name;
     console.log(
       "Init: topCourtScore = " +
-        topCourtScore + " with player 1: " + player1Name +
-        " btmCourtScore = " +
-        btmCourtScore + " with player 2: " + player2Name
+      topCourtScore + " with player 1: " + player1Name +
+      " btmCourtScore = " +
+      btmCourtScore + " with player 2: " + player2Name
     );
-    }, [player1Name, player2Name]);
+  }, [Player1, Player2, btmCourtScore, topCourtScore, player1Name, player2Name]);
   useEffect(() => {
     Player1.playerName = player1Name;
     Player2.playerName = player2Name;
@@ -82,7 +84,7 @@ const GamePage = ({ player1Name, player2Name }) => {
     //   const player1 = new Player(player1Name, 0);
     //   const player2 = new Player(player2Name, 0);
     // }
-  }, []);
+  }, [Player1, Player2, player1Name, player2Name]);
 
   //#region Court position
   //  -------------
@@ -198,7 +200,7 @@ const GamePage = ({ player1Name, player2Name }) => {
     checkMatchPoint(playerScores.player1, playerScores.player2);
     checkBtmWon(playerScores.player1, playerScores.player2);
   };
-  const handleClickSwapCourt = () => {};
+  const handleClickSwapCourt = () => { };
   const handleResetGame = () => {
     console.log("Pressed Reset Game");
     resetGame();
@@ -215,9 +217,10 @@ const GamePage = ({ player1Name, player2Name }) => {
         playerScores={topCourtScore}
         handleClickCourt={handleClickTopCourt}
       />
-      <div className='net' onClick={handleClickSwapCourt}>
+      <div className='net-region' onClick={handleClickSwapCourt}>
         <MdOutlineSwapVert fontSize={55} />
-        <img alt='Net' />
+        <div className="net">Net</div>
+        {/* <img alt='Net' /> */}
       </div>
       <PlayerCourts
         playerScores={btmCourtScore}

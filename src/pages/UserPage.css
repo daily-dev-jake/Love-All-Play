@@ -8,7 +8,12 @@
     align-items: center;
     margin-top: 2rem;
   }
-  
+  .loggedin-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
   .form-group {
     display: flex;
     flex-direction: column;
