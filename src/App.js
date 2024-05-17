@@ -12,24 +12,8 @@ import LandingPage from "./pages/LandingPage";
 function App() {
   const [player1Name, setPlayer1Name] = useState("");
   const [player2Name, setPlayer2Name] = useState("");
+  const [loginProfile, setProfile] = useState([]);
 
-  useEffect(() => {
-    const p1name = sessionStorage.getItem("playerName1");
-    const p2name = sessionStorage.getItem("playerName2");
-    if (p1name !== "" && p2name !== "") {
-      handleNameChange(1, p1name);
-      handleNameChange(2, p2name);
-    }
-  }, [player1Name, player2Name])
-
-  const handleNameChange = (playerNum, name) => {
-    if (playerNum === 1) {
-      setPlayer1Name(name);
-    } else if (playerNum === 2) {
-      setPlayer2Name(name);
-    }
-    // console.log(`ClientID isss: ${process.env.REACT_APP_GOOGLE_CLIENT_ID}`);
-  };
   return (
     <div className='App'>
       <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
@@ -44,7 +28,8 @@ function App() {
             <Route path='/app/gamepage' element={<GamePage player1Name={player1Name} player2Name={player2Name} />} />
             <Route path='/app/records' element={<RecordsPage />} />
             <Route path='/app/settings' element={<SettingsPage />} />
-            <Route path='/app/user' element={<UserPage handleNameChange={handleNameChange} player1Name={player1Name} player2Name={player2Name} />} />
+            {/* <Route path='/app/user' element={<UserPage handleNameChange={handleNameChange} player1Name={player1Name} player2Name={player2Name} />} /> */}
+            <Route path='/app/user' element={<UserPage setPlayer1Name={setPlayer1Name} setPlayer2Name={setPlayer2Name} player1Name={player1Name} player2Name={player2Name} setProfile={setProfile} loginProfile={loginProfile}/>} />
             <Route path='*' element={<Navigate to='/landing' replace />} />
           </Routes>
           <BottomNav />
