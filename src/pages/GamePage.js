@@ -4,7 +4,7 @@ import { MdOutlineSwapVert } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import "./GamePage.css";
 
-const DEBUG = true;
+const DEBUG = false;
 
 class Player {
   constructor(playerName, playerScore) {
@@ -215,9 +215,10 @@ const GamePage = ({ player1Name, player2Name }) => {
         playerScores={topCourtScore}
         handleClickCourt={handleClickTopCourt}
       />
-      <div className='net' onClick={handleClickSwapCourt}>
+      <div className='net-region' onClick={handleClickSwapCourt}>
         <MdOutlineSwapVert fontSize={55} />
-        <img alt='Net' />
+        <div className="net">Net</div>
+        {/* <img alt='Net' /> */}
       </div>
       <PlayerCourts
         playerScores={btmCourtScore}
