@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import "./UserPage.css";
 
@@ -29,34 +29,53 @@ const UserPage = ({ handleNameChange, player1Name, player2Name }) => {
     sessionStorage.setItem('playerName1', playerName1);
     sessionStorage.setItem('playerName2', playerName2);
   };
-  
-const googleLogin = useGoogleLogin({
-  flow: 'auth-code',
-  onSuccess: async (codeResponse) => {
-    // const options = {
-    //   headers: {
-    //     'Access-Control-Allow-Origin' : '*',
-    //     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',   
-    // }
-    // }
-      console.log("Code Response: "+codeResponse.code);
-      const tokens = await axios.post(
-          `http://localhost:${process.env.REACT_APP_SERVER_PORT}/auth/google`, {
-              code: codeResponse.code
-          });
-          // setUser();
-      console.log(tokens);
-  },
-  onError: errorResponse => console.log(errorResponse),
-});
+
+  const googleLogin = useGoogleLogin({
+    flow: 'auth-code',
+    onSuccess: async (codeResponse) => {
+      setUser(codeResponse);
+      const userInfo = await axios
+        .get('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${codeResponse.access_token}` },
+        })
+        .then(res => { return res.data});
+
+      console.log(userInfo);
+    },
+    onError: errorResponse => console.log(errorResponse),
+  });
 
 
   useEffect(() => {
     if (user) {
-      googleLogin();
+      console.log("User object: "+ JSON.stringify(user, null, 4));
+      // axios
+      //   .get(`https://www.googleapis.com/oauth2/v3/userinfo?access_token=${user.code}`, {
+      //     headers: {
+      //       Authorization: `Bearer ${user.code}`,
+      //       Accept: 'application/json'
+      //     }
+      //   })
+      //   .then((res) => {
+      //     setProfile(res.data);
+      //     console.log("Get data from googleapi : "+res.data);
+      //   })
+      //   .catch((err) => console.log(err));
+      axios.post("https://oauth2.googleapis.com/token", {
+        'code': user.code,
+        'client_id': process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        'client_secret': process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
+        'redirect_uri': 'postmessage',
+        'grant_type': 'authorization_code'
+    })
+    .then((tokens)=>{
+
+      console.log(tokens);
+    });
+    
     }
   },
-    [user,googleLogin]
+    [user]
   );
 
   // log out function to log the user out of google and set the profile array to null
@@ -79,8 +98,7 @@ const googleLogin = useGoogleLogin({
         <div className='guest-view'>
           <div className="guest-header">
             <h1>Hi Guest</h1>
-            <h3>Login or Sign up with Google here!</h3>
-            {googleLogin()}
+            <button onClick={googleLogin}>Login or Sign up with Google 🚀!</button>
           </div>
           <form onSubmit={handlePlayerNameUpdate}>
             <div className='form-group'>
