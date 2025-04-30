@@ -9,14 +9,14 @@ const UserPage = ({ setPlayer1Name, setPlayer2Name, player1Name, player2Name }) 
     if (playerNum === 2) setPlayer2Name(e.target.value);
   };
   const handlePlayerNameUpdate = (e) => {
-    
     e.preventDefault();
     console.log(player1Name, " ", player2Name);
-    savePlayers(player1Name, player2Name);
+    if(player1Name !== '' || player2Name !== '')
+      savePlayersNamesLocally(player1Name, player2Name);
   };
-  const savePlayers = (playerName1, playerName2) => {
-    sessionStorage.setItem('playerName1', playerName1);
-    sessionStorage.setItem('playerName2', playerName2);
+  const savePlayersNamesLocally = (player1Name, player2Name) => {
+    localStorage.setItem('player1Name', player1Name);
+    localStorage.setItem('player2Name', player2Name);
   };
 
   return (
