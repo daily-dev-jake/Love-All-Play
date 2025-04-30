@@ -8,9 +8,8 @@ Deployed to: https://love-all-play.onrender.com
 - Score counter
 - Serve indicator
 - Input player names
-- Google auth login 
 
-### Auth users 
+### Authenticated users
 - Saving player names
-- Match / Game points
+- Saving Match / Game points
 

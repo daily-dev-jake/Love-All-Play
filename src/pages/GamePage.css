@@ -1,46 +1,23 @@
-.score-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-.gameScore-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5px;
-  font-size: 4rem;
-  width: 65%;
-  font-weight: bold;
-}
-.gameScore-wrapper p {
-  margin: 0;
-  font-size: 4rem;
-  font-weight: bold;
-}
-.gameScores {
-  display: flex;
-  align-content: space-evenly;
-  padding:10px;
-  align-items: center;
-}
-
-.gameScores .score{
+.gamePage {
+  width: auto;
   display: flex;
   flex-direction: column;
 }
-.names {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
+.court-wrapper {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .courtScore {
-  width: 50%;
-  font-size: 5rem;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  font-size: 2rem;
 }
 .courtMatchScore {
-  width: 50%;
-  align-self: center;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
   font-size: 2rem;
 }
 .gameMatch-wrapper {
@@ -52,60 +29,92 @@
   font-size: 1rem;
   font-weight: bold;
 }
-
 .gameMatch {
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
-
-.net-region{
+.net-region {
   display: grid;
   margin-top: 1rem;
   margin-bottom: 1rem;
   grid-template-columns: 2rem auto;
   justify-items: center;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 5px;
 }
-
+.names {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+  font-size: 1rem;
+  font-weight: bold;
+}
+.score-wrapper {
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  width: 600px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
-  .gameScore-wrapper p {
-    /* have to check if phone is low res then,
-   need to decrease to 2rem */
+  .gamePage {
+    width: 100%;
+  }
+  .score-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    width: 1000px;
+    margin: 10px auto;
+    font-family: sans-serif;
+  }
+
+  .courtScore {    
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center; /* vertical center */
     font-size: 3rem;
   }
-  
-.courtScore {
-  width: 50%;
-  font-size: 3rem;
-}
 }
 
 @media screen and (max-aspect-ratio: 13/9) {
+  /* portrait styles here */
   @media screen and (min-width: 400px) {
- .gameScore-wrapper p {
-      /* have to check if phone is low res then,
-     need to decrease to 2rem */
-      font-size: 2rem;
-    }
-    
-.courtScore {
-    width: 50%;
-    font-size: 2rem;
-  }
-
-  }
-  @media screen and (max-device-width: 400px) {
-    gameScore-wrapper {
-      /* have to check if phone is low res then,
-     need to decrease to 2rem*/
-      font-size: 2rem;
+    .score-wrapper {
+      height: 20vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      width: 400px;
+      margin: 10px auto;
+      font-family: sans-serif;
     }
     .courtScore {
-        width: 50%;
-        font-size: 2rem;
-      }
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center; /* vertical center */
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-device-width: 400px) {
+    .score-wrapper {
+      height: 20vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      width: 400px;
+      margin: 20px auto;
+      font-family: sans-serif;
+    }
+    .courtScore {
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center; /* vertical center */
+      font-size: 2rem;
+    }
   }
 }

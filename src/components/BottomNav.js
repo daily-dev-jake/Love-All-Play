@@ -18,39 +18,39 @@ const BottomNav = () => {
         to='/app/gamepage'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
-          isActive ? <HiHome fontSize={65} /> : <HiOutlineHome fontSize={52} />
+          isActive ? <HiHome fontSize={36}/> : <HiOutlineHome fontSize={32}/>
         }
       </NavLink>
-      <NavLink
+       <NavLink
         to='/app/records'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
-            <MdDescription fontSize={65} />
+            <MdDescription fontSize={36}/>
           ) : (
-            <MdOutlineDescription fontSize={50} />
+            <MdOutlineDescription fontSize={32}/>
           )
         }
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to='/app/settings'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
-            <IoMdSettings fontSize={65} />
+            <IoMdSettings/>
           ) : (
-            <IoSettingsOutline fontSize={50} />
+            <IoSettingsOutline />
           )
         }
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to='/app/user'
         className={({ isActive }) => (isActive ? "active" : "inactive")}>
         {({ isActive }) =>
           isActive ? (
-            <FaUserCircle fontSize={65} />
+            <FaUserCircle fontSize={36}/>
           ) : (
-            <FaRegUserCircle fontSize={48} />
+            <FaRegUserCircle fontSize={32}/>
           )
         }
       </NavLink>
