@@ -7,12 +7,16 @@
   /* border-style: dotted; */
 }
 .inactive{
-  width: 22vmin;
+  padding-top: 1vh;
+  width: 32vw;
   color: #000000;
+  background-color: #aaaaaa;
 }
 .active {
   /* border-style: dotted; */
-  width: 23vmin;
+  width: 35vw;
+  padding-top: 1vh;
+  background-color: #f1f1f1;
   color: #95bcf0;
   padding-bottom: 0.25rem;
   border-bottom: 4px solid #95bcf0;
@@ -20,15 +24,15 @@
 
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
+  .Btm-nav {
+    min-height: 45px;
+  }
 }
 
 @media screen and (max-aspect-ratio: 13/9) {
   /* portrait styles here */
   .Btm-nav {
-    min-height: 85px;
-    margin-bottom: 0.2vh;
-    /* pointer-events: none; */
-    /* border-style: dotted; */
+    min-height: 50px;
   }
 
 }

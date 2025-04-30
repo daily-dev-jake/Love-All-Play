@@ -6,19 +6,39 @@
 .court {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
   pointer-events: none;
   width: 50%;
-  height: 28vh;
+  height: auto;
   font-size: 10vh;
   border-style: solid;
 }
 
 @media screen and (min-aspect-ratio: 13/9) {
   /* landscape styles here */
+.court {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 50%;
+  height: 22vh;
+  font-size: 10vh;
+  border-style: solid;
+}
 }
 
 @media screen and (max-aspect-ratio: 13/9) {
   /* portrait styles here */
+.court {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 50%;
+  height: 20vh;
+  font-size: 10vh;
+  border-style: solid;
+}
 
 }
