@@ -25,7 +25,6 @@ function App() {
           <Route path='/app/gamepage' element={<GamePage player1Name={player1Name} player2Name={player2Name} />} />
            <Route path='/app/records' element={<RecordsPage />} />
           {/*<Route path='/app/settings' element={<SettingsPage />} /> */}
-          {/* <Route path='/app/user' element={<UserPage handleNameChange={handleNameChange} player1Name={player1Name} player2Name={player2Name} />} /> */}
           <Route path='/app/user' element={<UserPage setPlayer1Name={setPlayer1Name} setPlayer2Name={setPlayer2Name} player1Name={player1Name} player2Name={player2Name} />} />
           <Route path='*' element={<Navigate to='/landing' replace />} />
         </Routes>

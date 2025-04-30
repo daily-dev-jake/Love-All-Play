@@ -26,7 +26,6 @@ const debugChanges = {
   player2MatchScore: 2,
 };
 
-
 const GamePage = ({ player1Name, player2Name }) => {
   //#region initialise player1 and 2
   const [player1, setPlayer1] = useState({
